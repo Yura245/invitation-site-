@@ -47,6 +47,8 @@
   </div>
 
   <script>
+    const squareSize = 400; // Размер квадрата
+
     function showResponse(isYes) {
       const inviteContainer = document.getElementById('invite-container');
       const noBtn = document.getElementById('no-btn');
@@ -63,6 +65,10 @@
         // Проверка границ перед изменением положения кнопки
         newPositionTop = Math.max(newPositionTop, 0);
         newPositionLeft = Math.max(newPositionLeft, 0);
+
+        // Проверка границ квадрата
+        newPositionTop = Math.min(newPositionTop, squareSize);
+        newPositionLeft = Math.min(newPositionLeft, squareSize);
 
         noBtn.style.top = newPositionTop + 'px';
         noBtn.style.left = newPositionLeft + 'px';
